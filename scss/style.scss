@@ -11,13 +11,14 @@
   -webkit-box-sizing: border-box;
 }
 
-@mixin separador($color){
+@mixin separador($color, $largura: 100px){
   &::after {
     content: "";
     display: block;
     width: 100px;
     height: 4px;
     background: $color;
+    width: $largura;
   }
 }
 
@@ -37,7 +38,7 @@ section {
     font-family: $font-primaria;
     margin-bottom: $gutter;
     @include title-large;
-    @include separador($cor-primaria);
+    @include separador($cor-primaria, 200px);
   }
 
   p {
